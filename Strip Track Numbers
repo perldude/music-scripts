@@ -1,0 +1,18 @@
+tell application "Music"
+	set selectedTracks to selection
+	if selectedTracks is {} then
+		display dialog "No tracks selected." buttons {"OK"} default button "OK"
+		return
+	end if
+	
+	repeat with aTrack in selectedTracks
+		set name of aTrack to my stripTrackNumbers(name of aTrack)
+	end repeat
+	
+	display dialog "Track number removed from the front of selected tracks' names." buttons {"OK"} default button "OK"
+end tell
+
+on stripTrackNumbers(theText)
+	set newText to do shell script "echo " & quoted form of theText & " | sed -E 's/^[0-9[:space:].-]+//'"
+	return newText
+end stripTrackNumbers

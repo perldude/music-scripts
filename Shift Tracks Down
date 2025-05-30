@@ -1,0 +1,21 @@
+tell application "Music"
+	set selectedTracks to selection
+	if selectedTracks is {} or selectedTracks is missing value then
+		display alert "No tracks selected!" message "Please select some tracks before running this script."
+		return
+	end if
+	
+	set newTrackName to text returned of (display dialog "Enter new name for the first track:" default answer "")
+	
+	set trackCount to count of selectedTracks
+	set previousName to name of item 1 of selectedTracks -- Store the original name of the first track
+	set name of item 1 of selectedTracks to newTrackName -- Rename the first track
+	
+	-- Iterate from second to last track, shifting names upward
+	repeat with i from 2 to trackCount
+		set currentTrack to item i of selectedTracks
+		set currentName to name of currentTrack
+		set name of currentTrack to previousName
+		set previousName to currentName
+	end repeat
+end tell

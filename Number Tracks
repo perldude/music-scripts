@@ -1,0 +1,13 @@
+tell application "Music"
+	set selectedTracks to selection
+	if selectedTracks is {} or selectedTracks is missing value then
+		display alert "No tracks selected!" message "Please select some tracks before running this script."
+		return
+	end if
+	
+	set trackCount to count of selectedTracks
+	
+	repeat with i from 1 to trackCount
+		set track number of item i of selectedTracks to i
+	end repeat
+end tell

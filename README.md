@@ -21,3 +21,7 @@ Sometimes you import music and the track numbers are in the title of the song. T
 ## Shift Play Count
 
 SYIM and there's a weird thing where the leadout track is shown as track zero (or even just omitted), you select it and the rest of the tracks, and all the songs are imported (except the first track) but the titles are shifted up by one. The last track is left with a file name for a track. This asks you for the name of the first track, puts that in its name, then shifts the rest of the songs down by one.
+
+## Unparen the Tail
+
+Don't you hate when an album is entitled "Live from the North Pole!" and every track, redundantly, has "(Live)" appended to its name? You don't? Well, I do. This strips off the last parenthesized thing from the end of song titles
