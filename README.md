@@ -2,6 +2,8 @@
 
 Some scripts I use in MacOS Music/iTunes that help me manage adding new music.
 
+Put them in `~/Library/Music/Scripts`.
+
 ## Capitalize Titles
 
 Sometimes you import music and the capitalization is all over the place. With this you select songs, run it, and the first letter of each word is capitalized. It even knows to capitalize `(foo)` as `(Foo)`.
